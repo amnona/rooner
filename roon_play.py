@@ -2,7 +2,10 @@
 
 from roonapi import RoonApi
 from flask import Flask
+import os
 
+cdir = os.path.dirname(os.path.abspath(__file__))
+token_file = os.path.join(cdir, 'mytokenfile')
 app = Flask(__name__)
 
 
@@ -11,10 +14,10 @@ def main():
     return 'your mother was a hamster'
 
 
-@app.route('/playpause')
-def playpause():
+@app.route('/toggle')
+def toggle():
     roonapi.playback_control(zone_or_output_id='16012da7c6f9d962e8ccb70a736cf19c2ca0', control='playpause')
-    return 'playpause'
+    return 'toggle'
 
 
 appinfo = {"extension_id": "python_roon_test",
@@ -27,7 +30,7 @@ appinfo = {"extension_id": "python_roon_test",
 def get_roon_api():
     token = None
     try:
-        token = open('mytokenfile').read()
+        token = open(token_file).read()
     except:
         print('no token found. please accept new extension in roon')
     # get all zones (as dict)
@@ -39,7 +42,7 @@ def get_roon_api():
     roon_api = RoonApi(appinfo, token, host='192.168.0.9')
 
     # save the token for next time
-    with open('mytokenfile', 'w') as f:
+    with open(token_file, 'w') as f:
         f.write(roon_api.token)
 
     return roon_api
@@ -62,8 +65,3 @@ print('ready')
 # # get all outputs (as dict)
 # print('outputs:')
 # print(roonapi.outputs)
-
-
-
-# #  16012da7c6f9d962e8ccb70a736cf19c2ca0 is Living Room - PS Audio
-# roonapi.play_genre(zone_or_output_id='16012da7c6f9d962e8ccb70a736cf19c2ca0', genre_name='Classical', shuffle=True)
