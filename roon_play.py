@@ -43,6 +43,8 @@ print('connecting to roon api')
 roonapi = get_roon_api()
 print('connected to roon.')
 
+app.run(port=5000)
+
 print('almost')
 roonapi.playback_control(zone_or_output_id='16012da7c6f9d962e8ccb70a736cf19c2ca0', control='playpause')
 print('ready')
