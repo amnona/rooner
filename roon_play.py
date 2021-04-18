@@ -25,7 +25,7 @@ def get_roon_api():
 
     # save the token for next time
     with open('mytokenfile', 'w') as f:
-        f.write(roonapi.token)
+        f.write(roon_api.token)
 
     return roon_api
 
