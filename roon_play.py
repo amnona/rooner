@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from roon import RoonApi
+from roonapi import RoonApi
 
 appinfo = {"extension_id": "python_roon_test",
            "display_name": "Python library for Roon",
