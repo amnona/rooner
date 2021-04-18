@@ -9,6 +9,7 @@ app = Flask(__name__)
 @app.route('/')
 def playpause():
     roonapi.playback_control(zone_or_output_id='16012da7c6f9d962e8ccb70a736cf19c2ca0', control='playpause')
+    return 'playpause'
 
 
 appinfo = {"extension_id": "python_roon_test",
