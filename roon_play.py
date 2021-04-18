@@ -42,4 +42,5 @@ print(roonapi.zones)
 print('outputs:')
 print(roonapi.outputs)
 
-roonapi.play_genre(zone_or_output_id='1601a1017231251ef045b9767880bc709941', genre_name='Classical', shuffle=True)
+#  16012da7c6f9d962e8ccb70a736cf19c2ca0 is Living Room - PS Audio
+roonapi.play_genre(zone_or_output_id='16012da7c6f9d962e8ccb70a736cf19c2ca0', genre_name='Classical', shuffle=True)
