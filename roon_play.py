@@ -34,13 +34,19 @@ print('connecting to roon api')
 roonapi = get_roon_api()
 print('connected to roon.')
 
-# get all zones (as dict)
-print('zones:')
-print(roonapi.zones)
+print('almost')
+roonapi.playback_control(zone_or_output_id='16012da7c6f9d962e8ccb70a736cf19c2ca0', control='playpause')
+print('ready')
 
-# get all outputs (as dict)
-print('outputs:')
-print(roonapi.outputs)
+# # get all zones (as dict)
+# print('zones:')
+# print(roonapi.zones)
 
-#  16012da7c6f9d962e8ccb70a736cf19c2ca0 is Living Room - PS Audio
-roonapi.play_genre(zone_or_output_id='16012da7c6f9d962e8ccb70a736cf19c2ca0', genre_name='Classical', shuffle=True)
+# # get all outputs (as dict)
+# print('outputs:')
+# print(roonapi.outputs)
+
+
+
+# #  16012da7c6f9d962e8ccb70a736cf19c2ca0 is Living Room - PS Audio
+# roonapi.play_genre(zone_or_output_id='16012da7c6f9d962e8ccb70a736cf19c2ca0', genre_name='Classical', shuffle=True)
