@@ -21,7 +21,7 @@ def get_roon_api():
     # get all outputs (as dict)
     # print(roonapi.outputs)
 
-    roon_api = RoonApi(appinfo, token, host='192.168.0.10')
+    roon_api = RoonApi(appinfo, token, host='192.168.0.9')
 
     # save the token for next time
     with open('mytokenfile', 'w') as f:
